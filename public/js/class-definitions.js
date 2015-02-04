@@ -556,6 +556,19 @@ Pen.prototype.write = function(message) {
  *   grow
  * 
  */
+function Garden (num) {
+  this.plantsTotal = num;
+  this.isWatered = false;
+}
+Garden.prototype.water = function() {
+  this.isWatered = true;
+};
+Garden.prototype.grow = function() {
+  if (this.isWatered) {
+    this.plantsTotal = this.plantsTotal + 1;
+    this.isWatered = false;
+  }
+};
 
 
 /* Step 32
@@ -574,7 +587,6 @@ Pen.prototype.write = function(message) {
  *   removePlanet
  *
  */
-
 
 /* Step 33
  *
