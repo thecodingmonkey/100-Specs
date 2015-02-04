@@ -327,6 +327,10 @@ var sahara_river = function() {
  *
  */
 
+function installLinux(distro) {
+  return linuxFlavors.indexOf(distro) !== -1;
+}
+
 
 /* Step 23
  *
