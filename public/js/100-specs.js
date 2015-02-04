@@ -253,7 +253,7 @@ HundredSpecs.prototype = {
 			js.expect.E.expect(door.isOpen).to.equal(true);
 		});
 		js.mocha.M.it("should close the door if it is open.",function() {
-			var door = new Door(false);
+			var door = new Door(true);
 			js.expect.E.expect(door.openClose()).to.equal(false);
 			js.expect.E.expect(door.isOpen).to.equal(false);
 		});
@@ -268,7 +268,7 @@ HundredSpecs.prototype = {
 			js.expect.E.expect(garfieldBox.isOpen).to.equal(true);
 		});
 		js.mocha.M.it("should not close the box if it is open.",function() {
-			var garfieldBox = new Box(new Animal('Cat', 'male'), false);
+			var garfieldBox = new Box(new Animal('Cat', 'male'), true);
 			js.expect.E.expect(garfieldBox.openBox()).to.equal(false);
 			js.expect.E.expect(garfieldBox.isOpen).to.equal(true);
 		});
@@ -307,7 +307,7 @@ HundredSpecs.prototype = {
 	}
 	,step81: function() {
 		js.mocha.M.it("isWarmBlooded should be a function.",function() {
-			js.expect.E.expect(Animal).to.not.be.a("function");
+			js.expect.E.expect(Animal).to.be.a("function");
 		});
 		js.mocha.M.it("'Monkey' and 'Bird' should return true.",function() {
 			js.expect.E.expect(new Animal('Monkey', 'male').isWarmBlooded()).to.equal(true);
@@ -824,6 +824,7 @@ HundredSpecs.prototype = {
 		js.mocha.M.it("should be able to grow more plants",function() {
 			var myGarden = new Garden(10);
 			js.expect.E.expect(myGarden.plantsTotal).to.equal(10);
+			myGarden.water();
 			myGarden.grow();
 			js.expect.E.expect(myGarden.plantsTotal).to.equal(11);
 		});
