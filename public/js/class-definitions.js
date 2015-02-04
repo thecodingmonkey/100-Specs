@@ -1092,7 +1092,7 @@ var gingerbread = new Cookie("gingerbread");
 
 // Create 2 different meals
 var breakfast = new Meal(['cereal', 'milk']);
-var dinner;
+var dinner = new Meal(['fish', 'vegetables']);
 
 
  /* Steps 81 to 90
