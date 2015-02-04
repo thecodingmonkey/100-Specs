@@ -1281,7 +1281,21 @@ Cookie.prototype.swipedByCookieMonster = function(dayOfTheWeek) {
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
  *
  */
+Meal.prototype.containsJunkFood = function () {
+  if (this.foods.indexOf('chips') !== -1)
+      return true;
+  if (this.foods.indexOf('soda') !== -1)
+      return true;
+  if (this.foods.indexOf('ice cream') !== -1)
+      return true;
+  if (this.foods.indexOf('popcorn') !== -1)
+      return true;
+  if (this.foods.indexOf('candy') !== -1)
+      return true;
 
+  return false;
+
+};
 
  /* Steps 91 to 100
  *
