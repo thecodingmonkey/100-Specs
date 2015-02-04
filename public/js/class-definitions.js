@@ -968,7 +968,9 @@ function Vehicle (make, model) {
  * Shape class
  * @param {number} sides The number of sides, should be greater than 3
  */
-
+function Shape (number) {
+  this.sides = number;
+}
 
 /**
  * Step 53
