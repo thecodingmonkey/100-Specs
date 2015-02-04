@@ -1321,8 +1321,8 @@ var notWarmOrColdAnimal = new Animal('Skunk').isWarmBlooded();
  * and assign the values to each variable below.
  *
  */
-var streetDriving;
-var forwardDriving;
+var streetDriving = new Vehicle('Toyota', 'Camry').drive('University Ave.');
+var forwardDriving = new Vehicle('Toyota', 'Camry').drive();
 
 
  /* Step 93
