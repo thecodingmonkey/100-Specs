@@ -1206,6 +1206,10 @@ Box.prototype.openBox = function() {
  * Return true if openClose opens the door, false if openClose closes the door.
  *
  */
+Door.prototype.openClose = function() {
+  this.isOpen = !(this.isOpen);
+  return this.isOpen;
+};
 
 
 /* Step 86
