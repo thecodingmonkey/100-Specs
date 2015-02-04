@@ -376,7 +376,14 @@ function drink(beerType) {
  * @return {String}
  *
  */
-
+function browseURL(browser) {
+  if (browsers[browser] !== undefined) {
+    return browsers[browser];
+  }
+  else {
+    return false;
+  }
+}
 
 /* Step 25
  *
