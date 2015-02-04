@@ -1055,8 +1055,8 @@ function Meal (foods) {
 
 
 // Create 2 different species of animals
-var george;
-var nemo;
+var george = new Animal("Monkey", "male");
+var nemo = new Animal("sheep");
 
 // Create 2 different vehicles
 var civic;
