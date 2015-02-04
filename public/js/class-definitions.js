@@ -126,7 +126,7 @@ var domains = {
   "laughingsquid.com": "162.159.247.97",
   "slumlordhosting.com": "198.61.179.126",
   "jsonformatter.curiousconcept.com": "104.28.5.70"
-}
+};
 
 /* Step 12
  *
@@ -225,6 +225,12 @@ var DNA = ["nucleatides", "guanine", "adenine", "thymine", "cytosine"];
  *
  */
 
+var laptopCosts = {
+  MacBook: 1500,
+  Alienware: 2500,
+  HP: 499,
+  Surface: 320
+};
 
 /* Step 17
  *
