@@ -3,7 +3,7 @@
  * Declare a variable named "unicorn"
  *
  */
-var unicorn = "";
+var unicorn = null;
 
 
 /* Step 2
@@ -571,6 +571,7 @@ Garden.prototype.grow = function() {
     this.plantsTotal = this.plantsTotal + 1;
     this.isWatered = false;
   }
+  
 };
 
 
