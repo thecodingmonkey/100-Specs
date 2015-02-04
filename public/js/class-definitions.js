@@ -394,7 +394,11 @@ function browseURL(browser) {
  * @return {String}
  *
  */
-
+function listLivingOrgClass() {
+  return "<ul><li>" +
+  livingOrganismClassification.join("</li><li>") +
+  "</li></ul>";
+}
 
 /* Step 26
  *
