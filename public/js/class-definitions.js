@@ -350,6 +350,20 @@ function installLinux(distro) {
  *
  */
 
+function drink(beerType) {
+  if (beers[beerType] !== undefined) {
+    if (Array.isArray(beers[beerType])) {
+      return "This " + beerType + " is " + beers[beerType].join(" and ") + ".";
+    }
+    else {
+      return "This " + beerType + " is " + beers[beerType] + ".";
+    }
+
+  }
+  else {
+    return false;
+  }
+}
 
 /* Step 24
  *
