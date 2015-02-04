@@ -419,6 +419,18 @@ function listLivingOrgClass() {
  * @return {String}
  *
  */
+function favoritePlanet(currentPlanet) {
+  if (planets.indexOf(currentPlanet) === -1) {
+    return currentPlanet + " is not a planet!";
+  }
+  else {
+    var randomPlanetIdx = (planets.indexOf(currentPlanet) + 
+      Math.floor(Math.random() * 8) + 1 ) % 8;
+
+    return "I'm from " + currentPlanet + ", but I wish I could go to " +
+      planets[randomPlanetIdx] + ".";
+  }
+}
 
 
 /* Step 27
