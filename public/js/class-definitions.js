@@ -1220,7 +1220,7 @@ Door.prototype.openClose = function() {
  */
 Shoe.prototype.findShoes = function() {
   return "Found " + this.color + " shoes of size " + this.size.toString();
-}
+};
 
  /* Step 87
  *
@@ -1230,6 +1230,9 @@ Shoe.prototype.findShoes = function() {
  * storiesTooTall, return true, else return false.
  *
  */
+House.prototype.isATallStory = function(storiesTooTall) {
+  return (this.stories >= storiesTooTall);
+};
 
 
  /* Step 88
