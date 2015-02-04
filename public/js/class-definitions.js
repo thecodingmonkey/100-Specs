@@ -481,6 +481,12 @@ Person.prototype.earnMoney = function(amount) {
  *
  */
 
+function purchaseLaptop(laptop) {
+  if (laptopCosts[laptop] !== undefined) {
+    return laptopCosts[laptop].toString();
+  }
+  return -1;
+}
 
 /* Step 29
  *
