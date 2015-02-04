@@ -1181,7 +1181,7 @@ Shape.prototype.getType = function() {
     default:
     return "Could not determine type";
   }
-}
+};
 
 /* Step 84
  *
@@ -1191,7 +1191,13 @@ Shape.prototype.getType = function() {
  * Return true if openBox opens the box, false otherwise.
  *
  */
-
+Box.prototype.openBox = function() {
+  if (this.isOpen === false) {
+    this.isOpen = true;
+    return true;
+  }
+  return false;
+};
 
  /* Step 85
  *
