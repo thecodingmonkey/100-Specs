@@ -45,7 +45,7 @@ var planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus
  * each galilean moon of Jupiter
  *
  */
-
+var galilean_moons = ['Io', 'Ganymede', 'Callisto', 'Europa'];
 
 /* Step 6 φ
  *
