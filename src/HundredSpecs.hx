@@ -626,6 +626,7 @@ class HundredSpecs
     M.it("should be able to grow more plants", function (){
       var myGarden = untyped __js__("new Garden(10)");
       E.expect( untyped(myGarden.plantsTotal) ).to.equal(10);
+      untyped(myGarden.water());
       untyped(myGarden.grow());
       E.expect( untyped(myGarden.plantsTotal) ).to.equal(11);
     });
@@ -1177,7 +1178,7 @@ class HundredSpecs
   private inline function step81():Void
   {
     M.it("isWarmBlooded should be a function.", function() {
-      E.expect(untyped __js__("Animal")).to.not.be.a('function');
+      E.expect(untyped __js__("Animal")).to.be.a('function');
     });
     M.it("'Monkey' and 'Bird' should return true.", function() {
       E.expect(untyped __js__("new Animal('Monkey', 'male')").isWarmBlooded()).to.equal(true);
@@ -1239,7 +1240,7 @@ class HundredSpecs
       E.expect(untyped(garfieldBox.isOpen)).to.equal(true);
     });
     M.it("should not close the box if it is open.", function() {
-      var garfieldBox = untyped __js__("new Box(new Animal('Cat', 'male'), false)");
+      var garfieldBox = untyped __js__("new Box(new Animal('Cat', 'male'), true)");
       E.expect(garfieldBox.openBox()).to.equal(false);
       E.expect(untyped(garfieldBox.isOpen)).to.equal(true);
     });
@@ -1256,7 +1257,7 @@ class HundredSpecs
       E.expect(untyped(door.isOpen)).to.equal(true);
     });
     M.it("should close the door if it is open.", function() {
-      var door = untyped __js__("new Door(false)");
+      var door = untyped __js__("new Door(true)");
       E.expect(door.openClose()).to.equal(false);
       E.expect(untyped(door.isOpen)).to.equal(false);
     });
