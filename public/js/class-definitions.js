@@ -1401,5 +1401,5 @@ var cookieMonsterBlocked = new Cookie('chocolate').swipedByCookieMonster("Not-A-
  * and assign the values to each variable below.
  *
  */
-var badForYou;
-var goodForYou;
+var badForYou = new Meal(['ice cream', 'candy']).containsJunkFood();
+var goodForYou = new Meal(['steak', 'potatoes']).containsJunkFood();
