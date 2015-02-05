@@ -1231,7 +1231,7 @@ HundredSpecs.prototype = {
 	}
 	,step88: function() {
 		js.mocha.M.it("flipSwitch should be a function.",function() {
-			var myLightbulb = new Lightbulb(false);
+			var myLightBulb = new Lightbulb(false);
 			js.expect.E.expect(myLightBulb.flipSwitch).to.be.a("function");
 		});
 		js.mocha.M.it("should flip the switch on if 'on' is passed in as a param.",function() {

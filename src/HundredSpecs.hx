@@ -1339,7 +1339,7 @@ class HundredSpecs
   private inline function step88():Void
   {
     M.it("flipSwitch should be a function.", function() {
-      var myLightbulb = untyped __js__("new Lightbulb(false)");
+      var myLightBulb = untyped __js__("new Lightbulb(false)");
       E.expect( untyped(myLightBulb.flipSwitch) ).to.be.a("function");
     });
     M.it("should flip the switch on if 'on' is passed in as a param.", function() {
