@@ -45,6 +45,7 @@ class HundredSpecs
     M.describe("PrincessLeia Class", step33);
     M.describe("Stapler Class", step34);
     M.describe("Scientiest Class", step35);
+    M.describe("BankAccount Class", step36);
     M.describe("Step 50", step50);
     M.describe("Step 51", step51);
     M.describe("Step 52", step52);
@@ -834,6 +835,42 @@ class HundredSpecs
       E.expect( untyped(myScientist.addDiscovery("Theory of Relativity")) ).to.match('I discovered Gravity and Theory of Relativity.');
       E.expect( untyped(myScientist.addDiscovery("Jesus Christ")) ).to.match('I discovered Gravity, Theory of Relativity, and Jesus Christ.');
     });
+  }
+
+  private inline function step36():Void
+  {
+      M.it("should define a class named 'BankAccount'.", function() {
+        E.expect(untyped(BankAccount)).to.be.a("function");
+      });
+
+      M.it("should have properties 'balance' and 'owner'.", function() {
+        var myPerson = untyped __js__("new Person('Waldo', '500', '21', 'male')");
+        var myBankAccount = untyped __js__("new BankAccount(42, myPerson)");
+        E.expect( myBankAccount ).to.be.a( untyped __js__("BankAccount") );
+        E.expect( Reflect.fields( untyped(myBankAccount) ) ).to.have.length(2);
+        E.expect( myBankAccount ).to.have.key("balance");
+        E.expect( myBankAccount.balance ).to.be.a("number");
+        E.expect( myBankAccount ).to.have.key("owner");
+        E.expect( myBankAccount.owner ).to.be.a(untyped __js__("Person"));
+      });
+
+      M.it("should have a method 'withdraw' to withdraw money.", function() {
+        var myPerson = untyped __js__("new Person('Waldo', '500', '21', 'male')");
+        var myBankAccount = untyped __js__("new BankAccount(42, myPerson)");
+        E.expect(untyped(BankAccount.prototype.withdraw)).to.be.a("function");
+        untyped(myBankAccount.withdraw(30));
+        E.expect( myBankAccount.balance ).to.equal(12);
+      });
+      
+      M.it("should not allow withdrawing more than the balance", function() {
+        var myPerson = untyped __js__("new Person('Waldo', '500', '21', 'male')");
+        var myBankAccount = untyped __js__("new BankAccount(42, myPerson)");
+        E.expect( myBankAccount ).to.be.a( untyped __js__("BankAccount") );
+        untyped(myBankAccount.withdraw(999));
+        E.expect( myBankAccount.balance ).to.equal(42);
+      });
+
+
   }
 
   private inline function step50():Void

@@ -36,6 +36,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("PrincessLeia Class",$bind(this,this.step33));
 	js.mocha.M.describe("Stapler Class",$bind(this,this.step34));
 	js.mocha.M.describe("Scientiest Class",$bind(this,this.step35));
+	js.mocha.M.describe("BankAccount Class",$bind(this,this.step36));
 	js.mocha.M.describe("Step 50",$bind(this,this.step50));
 	js.mocha.M.describe("Step 51",$bind(this,this.step51));
 	js.mocha.M.describe("Step 52",$bind(this,this.step52));
@@ -808,6 +809,35 @@ HundredSpecs.prototype = {
 			js.expect.ExpectMixins.match(js.expect.E.expect(myScientist8.addDiscovery("Gravity")).to,"I discovered Gravity.");
 			js.expect.ExpectMixins.match(js.expect.E.expect(myScientist8.addDiscovery("Theory of Relativity")).to,"I discovered Gravity and Theory of Relativity.");
 			js.expect.ExpectMixins.match(js.expect.E.expect(myScientist8.addDiscovery("Jesus Christ")).to,"I discovered Gravity, Theory of Relativity, and Jesus Christ.");
+		});
+	}
+	,step36: function() {
+		js.mocha.M.it("should define a class named 'BankAccount'.",function() {
+			js.expect.E.expect(BankAccount).to.be.a("function");
+		});
+		js.mocha.M.it("should have properties 'balance' and 'owner'.",function() {
+			var myPerson = new Person('Waldo', '500', '21', 'male');
+			var myBankAccount = new BankAccount(42, myPerson);
+			js.expect.E.expect(myBankAccount).to.be.a(BankAccount);
+			js.expect.E.expect(Reflect.fields(myBankAccount)).to.have.length(2);
+			js.expect.E.expect(myBankAccount).to.have.key("balance");
+			js.expect.E.expect(myBankAccount.balance).to.be.a("number");
+			js.expect.E.expect(myBankAccount).to.have.key("owner");
+			js.expect.E.expect(myBankAccount.owner).to.be.a(Person);
+		});
+		js.mocha.M.it("should have a method 'withdraw' to withdraw money.",function() {
+			var myPerson1 = new Person('Waldo', '500', '21', 'male');
+			var myBankAccount1 = new BankAccount(42, myPerson);
+			js.expect.E.expect(BankAccount.prototype.withdraw).to.be.a("function");
+			myBankAccount1.withdraw(30);
+			js.expect.E.expect(myBankAccount1.balance).to.equal(12);
+		});
+		js.mocha.M.it("should not allow withdrawing more than the balance",function() {
+			var myPerson2 = new Person('Waldo', '500', '21', 'male');
+			var myBankAccount2 = new BankAccount(42, myPerson);
+			js.expect.E.expect(myBankAccount2).to.be.a(BankAccount);
+			myBankAccount2.withdraw(999);
+			js.expect.E.expect(myBankAccount2.balance).to.equal(42);
 		});
 	}
 	,step50: function() {
