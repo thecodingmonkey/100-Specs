@@ -777,18 +777,6 @@ Scientist.prototype.addDiscovery = function(item) {
  *   rob
  *
  */
-function BankAccount(balance, owner) {
-  this.balance = balance;
-  this.owner = owner;
-}
-BankAccount.prototype.withdraw = function(amount) {
-  if (amount <= this.balance && amount >= 0) {
-    this.balance = this.balance - amount;
-    this.owner.money = this.owner.money + amount;
-    return true;
-  }
-  return false;
-};
 
 /* Step 37
  *
