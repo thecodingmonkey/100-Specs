@@ -974,7 +974,10 @@ function Vehicle (make, model) {
  * Step 52
  * 
  * Shape class
- * @param {number} sides The number of sides, should be greater than 3
+ * @param {number} sides The number of sides, should be a number 
+ * greater or equal to 3, if the number is less than 3 then set the
+ * value of the sides property to null.
+ * 
  */
 function Shape (number) {
   if (typeof(number) !== "number" || number < 3 || number > 10) {
@@ -1228,7 +1231,7 @@ Door.prototype.openClose = function() {
 /* Step 86
  *
  * Declare a Shoe method called findShoes that returns a string containing
- * the color and size of the shoe ("Found red shoes of size 8").
+ * the color and size of the shoe ("Found red shoes of size 7").
  *
  */
 Shoe.prototype.findShoes = function() {
