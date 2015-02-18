@@ -982,6 +982,7 @@ function Vehicle (make, model) {
 function Shape (number) {
   if (typeof(number) !== "number" || number < 3 || number > 10) {
     console.log("Invalid parameter.");
+    this.sides = null;
     return;
   }
 
