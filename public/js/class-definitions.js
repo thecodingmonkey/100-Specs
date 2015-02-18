@@ -425,7 +425,7 @@ function favoritePlanet(currentPlanet) {
   }
   else {
     var randomPlanetIdx = (planets.indexOf(currentPlanet) + 
-      Math.floor(Math.random() * 8) + 1 ) % 8;
+      Math.floor(Math.random() * (planets.length - 1)) + 1 ) % (planets.length - 1);
 
     return "I'm from " + currentPlanet + ", but I wish I could go to " +
       planets[randomPlanetIdx] + ".";
@@ -600,11 +600,15 @@ SolarSystem.prototype.addPlanet = function(planet) {
   this.planets.push(planet);
 };
 SolarSystem.prototype.removePlanet = function(planet) {
-  // var idx = this.planets.indexOf(planet)
-  // if (idx != -1) {
-  //   this.planets.splice(idx,1);
-  // }
-  this.planets.pop();
+  if (planet === undefined) {
+    this.planets.pop();
+    return;
+  }
+
+  var idx = this.planets.indexOf(planet);
+  if (idx != -1) {
+    this.planets.splice(idx,1);
+  }
 };
 
 /* Step 33
@@ -973,6 +977,11 @@ function Vehicle (make, model) {
  * @param {number} sides The number of sides, should be greater than 3
  */
 function Shape (number) {
+  if (typeof(number) !== "number" || number < 3 || number > 10) {
+    console.log("Invalid parameter.");
+    return;
+  }
+
   this.sides = number;
 }
 
